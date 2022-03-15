@@ -36,7 +36,7 @@ void print(const T &first, TAIL... next) {
  */
 template<typename Y>
 void input(Y &varInput) {
-	cin >> varInput;
+    cin >> varInput;
 }
 
 /**
