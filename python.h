@@ -48,6 +48,6 @@ void input(Y &varInput) {
 template<typename Y>
 void input(string str, Y &varInput) {
     cout << str;
-	cin >> varInput;
+    cin >> varInput;
 }
 
