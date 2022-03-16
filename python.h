@@ -4,7 +4,7 @@
 #include <string>
 #include <cstring>
 #include <sstream>
-
+#include <typeinfo>
 
 using std::endl;
 using std::cout;
@@ -24,11 +24,12 @@ public:
      * @param arrayOfInt An array of integers that needs to be assigned, it takes the range from the first parameter til the last one.
      * 
      * Such that doing arrayOfInt[5]; range(0, 5, arrayOfInt); Printing arrayOfInt will give you 0,1,2,3,4.
+     * 
      */
     range(int firstNumber, int lastNumber, int arrayOfInt[]) {
         int i;
-        for (i = firstNumber; i < lastNumber; i++) {
-            arrayOfInt[i] = i;
+        for (int j = 0, i = firstNumber; i < lastNumber; i++ , j++) {
+            arrayOfInt[j] = i;
         }
         
     }
@@ -49,6 +50,7 @@ public:
         convertToString >> convertedToString;
     }
 };
+
 /**
  * @brief Python-Like print() function.
  * @param void prints a New Line
@@ -59,7 +61,7 @@ void print() {
 
 /**
  * @brief A Python-Like print function that prints out the arguments whatever they are 
- * @param first is the first value wheather it's string, int, double or bool.
+ * @param first is the first value whether it's string, int, double or bool.
  * @param next is the next value and it can be multiple values.
  * Thus using print("C++", 2, 6.9) will print the following: C++ 2 6.9
  */
@@ -67,6 +69,29 @@ template<typename T, typename ...TAIL >
 void print(const T &first, TAIL... next) {
     cout << first << ' ';
     print(next...);
+}
+
+/**
+ * @brief A function to print any type of arrays, but in "int, float or double" arrays, it prints everything without the last value.
+ */
+template<typename T, size_t n>
+void print(T const(& arr)[n])
+{
+    string STR;
+    str(arr, STR);
+
+    if (arr[0] == STR[0]) {
+        for (size_t i = 0; i < n; i++) {
+            cout << arr[i];
+        }
+    }
+
+    else {   
+        for (size_t i = 0; i < n; i++) {
+            cout << arr[i] << ' ';
+        }
+    }
+    cout << endl;
 }
 
 /**
@@ -119,4 +144,3 @@ int len(string lenOfString) {
     }
     return countOfStringChars;
 }
-
