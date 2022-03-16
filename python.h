@@ -9,6 +9,19 @@ using std::cout;
 using std::cin;
 using std::string;
 
+class range {
+private:
+    int firstNumber, lastNumber;
+public:
+    range(int firstNumber, int lastNumber, int arrayOfInt[]) {
+        int i;
+        for (i = firstNumber; i < lastNumber; i++) {
+            arrayOfInt[i] = i;
+        }
+        
+    }
+};
+
 /**
  * @brief Python-Like print() function.
  * @param void prints a New Line
@@ -36,7 +49,7 @@ void print(const T &first, TAIL... next) {
  */
 template<typename Y>
 void input(Y &varInput) {
-    cin >> varInput;
+	cin >> varInput;
 }
 
 /**
@@ -48,6 +61,6 @@ void input(Y &varInput) {
 template<typename Y>
 void input(string str, Y &varInput) {
     cout << str;
-    cin >> varInput;
+	cin >> varInput;
 }
 
