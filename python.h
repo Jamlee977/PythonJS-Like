@@ -6,7 +6,6 @@
 #include <string>
 #include <cstring>
 #include <sstream>
-// #include <typeinfo>
 
 using std::endl;
 using std::cout;
@@ -56,24 +55,49 @@ public:
 
 class integer {
 public:
+
+    /**
+     * @brief Convert a string into an int.
+     * 
+     * @param stringToInt The string that you want to turn into an int.
+     * @param convertedToInt The int variable that you want the string to turn into.
+     */
     integer(string stringToInt, int &convertedToInt) {
         stringstream convertToInt;
         convertToInt << stringToInt;
         convertToInt >> convertedToInt;
     }
     
+    /**
+     * @brief Convert a string into a long int.
+     * 
+     * @param stringToInt The string that you want to turn into a long int.
+     * @param convertedToInt The long int variable that you want the string to turn into.
+     */
     integer(string stringToInt, long &convertedToInt) {
         stringstream convertToInt;
         convertToInt << stringToInt;
         convertToInt >> convertedToInt;
     }
 
+    /**
+     * @brief Convert a string into a long long int.
+     * 
+     * @param stringToInt The string that you want to turn into a long long int.
+     * @param convertedToInt The long long int variable that you want the string to turn into.
+     */
     integer(string stringToInt, long long int &convertedToInt) {
         stringstream convertToInt;
         convertToInt << stringToInt;
         convertToInt >> convertedToInt;
     }
 
+    /**
+     * @brief Convert a string into a unsigned int.
+     * 
+     * @param stringToInt The string that you want to turn into a unsigned int.
+     * @param convertedToInt The unsigned int variable that you want the string to turn into.
+     */
     integer(string stringToInt, unsigned int &convertedToInt) {
         stringstream convertToInt;
         convertToInt << stringToInt;
@@ -83,12 +107,25 @@ public:
 
 class real {
 public:
+
+    /**
+     * @brief Convert a string into a float.
+     * 
+     * @param stringToInt The string that you want to turn into a float.
+     * @param convertedToInt The float variable that you want the string to turn into.
+     */
     real(string stringToFloat, float &convertedToFloat) {
         stringstream convertToFloat;
         convertToFloat << stringToFloat;
         convertToFloat >> convertedToFloat;
     }
 
+    /**
+     * @brief Convert a string into a double.
+     * 
+     * @param stringToInt The string that you want to turn into a double.
+     * @param convertedToInt The double variable that you want the string to turn into.
+     */
     real(string stringToDouble, double &convertedToDouble) {
         stringstream convertToDouble;
         convertToDouble << stringToDouble;
@@ -99,12 +136,25 @@ public:
 
 class toChar {
 public:
+
+    /**
+     * @brief Convert a string into a char.
+     * 
+     * @param stringToInt The string that you want to turn into a char.
+     * @param convertedToInt The char variable that you want the string to turn into.
+     */
     toChar(string stringToChar, char &convertedToChar) {
         stringstream convertToChar;
         convertToChar << stringToChar;
         convertToChar >> convertedToChar;
     }
 
+    /**
+     * @brief Convert a string into an array of char.
+     * 
+     * @param stringToInt The string that you want to turn into an array of char.
+     * @param convertedToInt The array of char variable that you want the string to turn into.
+     */
     toChar(string stringToChar, char convertedToChar[]) {
         stringstream convertToChar;
         convertToChar << stringToChar;
@@ -113,28 +163,84 @@ public:
 
 };
 
-
+/**
+ * @brief A function that prints the type of a variable
+ */
 void type(string stringDatatype) {
-    cout << "str";
+    cout << "str" << endl;
 }
 
+/**
+ * @brief A function that prints the type of a variable
+ */
 void type(char charDatatype) {
-    cout << "char";
+    cout << "char" << endl;
 }
 
+/**
+ * @brief A function that prints the type of a variable
+ */
 void type(int intDatatype) {
-    cout << "int";
+    cout << "int" << endl;
 }
 
+/**
+ * @brief A function that prints the type of a variable
+ */
 void type(float floatDatatype) {
-    cout << "float";
+    cout << "float" << endl;
 }
 
+/**
+ * @brief A function that prints the type of a variable
+ */
 void type(double doubleDatatype) {
-    cout << "double";
+    cout << "double" << endl;
+}
+
+/**
+ * @brief A function that prints the type of a variable
+ */
+void type(long double doubleDatatype) {
+    cout << "long double" << endl;
+}
+
+/**
+ * @brief A function that prints the type of a variable
+ */
+void type(long int intDatatype) {
+    cout << "long int" << endl;
+}
+
+/**
+ * @brief A function that prints the type of a variable
+ */
+void type(long long int intDatatype) {
+    cout << "long long int" << endl;
+}
+
+/**
+ * @brief A function that prints the type of a variable
+ */
+void type(char intDatatype[]) {
+    cout << "array of characters" << endl;
+}
+
+/**
+ * @brief A function that prints the type of a variable
+ */
+void type(int intDatatype[]) {
+    cout << "array of int" << endl;
 }
 
 
+
+/**
+ * @brief A function that prints the type of a variable
+ */
+void type(unsigned int intDatatype) {
+    cout << "unsigned int" << endl;
+}
 
 /**
  * @brief Python-Like print() function.
@@ -176,7 +282,7 @@ void print(T const(& arr)[n])
             cout << arr[i] << ' ';
         }
     }
-    // print(tail...);
+    
     cout << endl;
 }
 
