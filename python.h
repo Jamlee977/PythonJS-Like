@@ -1,4 +1,5 @@
-#pragma
+#pragma once
+
 
 #include <iostream>
 #include <math.h>
@@ -163,6 +164,7 @@ public:
 
 };
 
+
 /**
  * @brief A function that prints the type of a variable
  */
@@ -201,46 +203,234 @@ void type(double doubleDatatype) {
 /**
  * @brief A function that prints the type of a variable
  */
-void type(long double doubleDatatype) {
+void type(long double longDoubleDatatype) {
     cout << "long double" << endl;
 }
 
 /**
  * @brief A function that prints the type of a variable
  */
-void type(long int intDatatype) {
+void type(long int longIntDatatype) {
     cout << "long int" << endl;
 }
 
 /**
  * @brief A function that prints the type of a variable
  */
-void type(long long int intDatatype) {
+void type(long long int longLongIntDatatype) {
     cout << "long long int" << endl;
 }
 
 /**
  * @brief A function that prints the type of a variable
  */
-void type(char intDatatype[]) {
-    cout << "array of characters" << endl;
+void type(unsigned int unsignedIntDatatype) {
+    cout << "unsigned int" << endl;
 }
 
 /**
  * @brief A function that prints the type of a variable
  */
-void type(int intDatatype[]) {
+void type(char charArrayDatatype[]) {
+    cout << "array of char" << endl;
+}
+
+/**
+ * @brief A function that prints the type of a variable
+ */
+void type(int intArrayDatatype[]) {
     cout << "array of int" << endl;
 }
 
-
+/**
+ * @brief A function that prints the type of a variable
+ */
+void type(float floatArrayDatatype[]) {
+    cout << "array of float" << endl;
+}
 
 /**
  * @brief A function that prints the type of a variable
  */
-void type(unsigned int intDatatype) {
-    cout << "unsigned int" << endl;
+void type(double doubleArrayDatatype[]) {
+    cout << "array of double" << endl;
 }
+
+/**
+ * @brief A function that prints the type of a variable
+ */
+void type(string stringArrayDatatype[]) {
+    cout << "array of string" << endl;
+}
+
+/**
+ * @brief A function that prints the type of a variable
+ */
+template <typename T>
+void type(T *pointerDatatype) {
+    cout << "pointer" << endl;
+}
+
+/**
+ * @brief A function to determine if an integer is prime.
+ * 
+ * @param isPrimeInt  
+ */
+bool isPrime(int isPrimeInt) {
+    int i;
+    for (i = 2; i <= isPrimeInt / 2; i++) {
+        if (isPrimeInt % i == 0) {
+            return false;
+        }
+
+    }
+
+    return true;
+    
+}
+
+
+/**
+ * @brief A fucntion to get you the prime numbers in range starting from 0.
+ * 
+ * @param number The end of the range.
+ */
+void prime(int number) {
+    int i, j, flag;
+
+    for (i = 0; i <= number; i++) {
+        if (i == 0 || i == 1) {
+            continue;
+        }
+
+        flag = 1;
+
+        for (j = 2; j <= i / 2; j++) {
+            if (i % j == 0) {
+                flag = 0;
+                break;
+            }
+        }
+
+        if (flag == 1) {
+            cout << i << ' ';
+        }
+    }
+    cout << endl;
+}
+
+/**
+ * @brief A fucntion to get you the prime numbers in range.
+ * 
+ * @param firstNumber The first number in the range.
+ * @param lastNumber The last number in the range.
+ */
+void prime(int firstNumber, int lastNumber) {
+    int i, j, flag;
+
+    for (i = firstNumber; i <= lastNumber; i++) {
+        if (i == 0 || i == 1) {
+            continue;
+        }
+
+        flag = 1;
+
+        for (j = 2; j <= i / 2; j++) {
+            if (i % j == 0) {
+                flag = 0;
+                break;
+            }
+        }
+
+        if (flag == 1) {
+            cout << i << ' ';
+        }
+    }
+    cout << endl;
+}
+
+
+/**
+ * @brief A function to uppercase a char or a string.
+ * 
+ * @param toUpper 
+ */
+char upper(char &toUpper) {
+    toUpper = toUpper - 32;
+    return toUpper;
+}
+
+/**
+ * @brief A function to uppercase a char or a string.
+ * 
+ * @param toUpper 
+ */
+void upper(char toUpper[]) {
+    int i;
+
+    for (i = 0; toUpper[i]; i++) {
+        if (toUpper[i] >= 'a' && toUpper[i] <= 'z') {
+            toUpper[i] = toUpper[i] - 32;
+        }
+    }
+}
+
+/**
+ * @brief A function to uppercase a char or a string.
+ * 
+ * @param toUpper 
+ */
+void upper(string &toUpper) {
+    int i;
+
+    for (i = 0; toUpper[i]; i++) {
+        if (toUpper[i] >= 'a' && toUpper[i] <= 'z') {
+            toUpper[i] = toUpper[i] - 32;
+        }
+    }
+}
+
+/**
+ * @brief A function to lowercase a char or a string.
+ * 
+ * @param toLower 
+ */
+char lower(char &toLower) {
+    toLower = toLower + 32;
+    return toLower;
+}
+
+/**
+ * @brief A function to lowercase a char or a string.
+ * 
+ * @param toLower 
+ */
+void lower(char toLower[]) {
+    int i;
+
+    for (i = 0; toLower[i]; i++) {
+        if (toLower[i] >= 'A' && toLower[i] <= 'Z') {
+            toLower[i] = toLower[i] + 32;
+        }
+    }
+}
+
+/**
+ * @brief A function to lowercase a char or a string.
+ * 
+ * @param toLower 
+ */
+void lower(string &toLower) {
+    int i;
+
+    for (i = 0; toLower[i]; i++) {
+        if (toLower[i] >= 'A' && toLower[i] <= 'Z') {
+            toLower[i] = toLower[i] + 32;
+        }
+    }
+}
+
+
 
 /**
  * @brief Python-Like print() function.
@@ -335,4 +525,10 @@ int len(string lenOfString) {
         countOfStringChars++;
     }
     return countOfStringChars;
+}
+
+
+void reverse(char toReverse[]) {
+    
+    
 }
