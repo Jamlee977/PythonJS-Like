@@ -1,16 +1,19 @@
+#pragma
+
 #include <iostream>
 #include <math.h>
 #include <cmath>
 #include <string>
 #include <cstring>
 #include <sstream>
-#include <typeinfo>
+// #include <typeinfo>
 
 using std::endl;
 using std::cout;
 using std::cin;
 using std::string;
 using std::stringstream;
+
 
 class range {
 private:
@@ -50,6 +53,88 @@ public:
         convertToString >> convertedToString;
     }
 };
+
+class integer {
+public:
+    integer(string stringToInt, int &convertedToInt) {
+        stringstream convertToInt;
+        convertToInt << stringToInt;
+        convertToInt >> convertedToInt;
+    }
+    
+    integer(string stringToInt, long &convertedToInt) {
+        stringstream convertToInt;
+        convertToInt << stringToInt;
+        convertToInt >> convertedToInt;
+    }
+
+    integer(string stringToInt, long long int &convertedToInt) {
+        stringstream convertToInt;
+        convertToInt << stringToInt;
+        convertToInt >> convertedToInt;
+    }
+
+    integer(string stringToInt, unsigned int &convertedToInt) {
+        stringstream convertToInt;
+        convertToInt << stringToInt;
+        convertToInt >> convertedToInt;
+    }
+};
+
+class real {
+public:
+    real(string stringToFloat, float &convertedToFloat) {
+        stringstream convertToFloat;
+        convertToFloat << stringToFloat;
+        convertToFloat >> convertedToFloat;
+    }
+
+    real(string stringToDouble, double &convertedToDouble) {
+        stringstream convertToDouble;
+        convertToDouble << stringToDouble;
+        convertToDouble >> convertedToDouble;
+    }
+
+};
+
+class toChar {
+public:
+    toChar(string stringToChar, char &convertedToChar) {
+        stringstream convertToChar;
+        convertToChar << stringToChar;
+        convertToChar >> convertedToChar;
+    }
+
+    toChar(string stringToChar, char convertedToChar[]) {
+        stringstream convertToChar;
+        convertToChar << stringToChar;
+        convertToChar >> convertedToChar;
+    }
+
+};
+
+
+void type(string stringDatatype) {
+    cout << "str";
+}
+
+void type(char charDatatype) {
+    cout << "char";
+}
+
+void type(int intDatatype) {
+    cout << "int";
+}
+
+void type(float floatDatatype) {
+    cout << "float";
+}
+
+void type(double doubleDatatype) {
+    cout << "double";
+}
+
+
 
 /**
  * @brief Python-Like print() function.
@@ -91,6 +176,7 @@ void print(T const(& arr)[n])
             cout << arr[i] << ' ';
         }
     }
+    // print(tail...);
     cout << endl;
 }
 
