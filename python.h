@@ -26,13 +26,33 @@ public:
      * @param lastNumber The ending of the range.
      * @param arrayOfInt An array of integers that needs to be assigned, it takes the range from the first parameter til the last one.
      * 
-     * Such that doing arrayOfInt[5]; range(0, 5, arrayOfInt); Printing arrayOfInt will give you 0,1,2,3,4.
+     * Such that doing arrayOfInt[5]; range(0, 5, arrayOfInt); Printing arrayOfInt will give you 0,3,6,9,12.
      * 
      */
     range(int firstNumber, int lastNumber, int arrayOfInt[]) {
         int i;
         for (int j = 0, i = firstNumber; i < lastNumber; i++ , j++) {
             arrayOfInt[j] = i;
+        }
+        
+    }
+
+    /**
+     * @brief A range class that can be used to assign an array of integers.
+     * 
+     * @param firstNumber The starting of the range.
+     * @param lastNumber The ending of the range.
+     * @param step The step for moving.
+     * @param arrayOfInt An array of integers that needs to be assigned, it takes the range from the first parameter til the last one.
+     * 
+     * Such that doing arrayOfInt[5]; range(0, 15, 2, arrayOfInt); Printing arrayOfInt will give you 0,1,2,3,4.
+     * 
+     */
+    range(int firstNumber, int lastNumber, int step, int arrayOfInt[]) {
+        int i;
+        for (int j = 0, i = firstNumber; i < lastNumber; i++ , j++) {
+            arrayOfInt[j] = i;
+            i = i + step;
         }
         
     }
@@ -231,45 +251,14 @@ void type(unsigned int unsignedIntDatatype) {
 /**
  * @brief A function that prints the type of a variable
  */
-void type(char charArrayDatatype[]) {
-    cout << "array of char" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(int intArrayDatatype[]) {
-    cout << "array of int" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(float floatArrayDatatype[]) {
-    cout << "array of float" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(double doubleArrayDatatype[]) {
-    cout << "array of double" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(string stringArrayDatatype[]) {
-    cout << "array of string" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
 template <typename T>
-void type(T *pointerDatatype) {
-    cout << "pointer" << endl;
+void type(T arrayDatatype[]) {
+    cout << "array" << endl;
 }
+
+
+
+
 
 /**
  * @brief A function to determine if an integer is prime.
@@ -477,6 +466,20 @@ void print(T const(& arr)[n])
 }
 
 /**
+ * @brief A function to print an array of strings.
+ * 
+ * @param arrayOfStrings 
+ * @param size 
+ */
+void print(const char *arrayOfStrings[], int size) {
+    int i;
+    for (i = 0; i < size; i++) {
+        cout << arrayOfStrings[i] << endl;
+    }
+}
+
+
+/**
  * @brief This functions is used to enter an input without entering a sentence before the variable.
  * 
  * @param varInput is the input that the user wants to enter.
@@ -513,7 +516,7 @@ int len(char lenOfArrayofChar[]) {
 }
 
 /**
- * @brief This function is used to get the length of an Array of Characters.
+ * @brief This function is used to get the length of a string.
  * 
  * @param lenOfString is a string that is used in this function to get you its size
  * @return countOfStringChars 
@@ -527,8 +530,318 @@ int len(string lenOfString) {
     return countOfStringChars;
 }
 
+/**
+ * @brief This function is used to get the length of an Array of Strings.
+ * 
+ * @param lenOfString is a string that is used in this function to get you its size
+ * @return countOfStringsInArray 
+ */
+int len(const char *lenOfArrayOfStrings[]) {
+    int i, countOfStringsInArray = 0;
+    for (i = 0; lenOfArrayOfStrings[i]; i++)
+    {
+        countOfStringsInArray++;
+    }
+    countOfStringsInArray - 13;
+    return countOfStringsInArray;
+    
+}
 
+
+/**
+ * @brief A function to copy two strings.
+ * 
+ * @param toBeCopied 
+ * @param toCopyIn 
+ */
+void copy(char toBeCopied[], char toCopyIn[]) {
+    int size;
+    size = len(toBeCopied);
+    for (int i = 0; i <= size; i++)
+    {
+        toCopyIn[i] = toBeCopied[i];
+    }
+    
+}
+
+/**
+ * @brief A function to copy two strings.
+ * 
+ * @param toBeCopied 
+ * @param toCopyIn 
+ */
+void copyBack(char toBeCopied[], char toCopyIn[]) {
+    int size;
+    size = len(toBeCopied);
+    int i, j;
+    for (j = 0; j <= size; j++);
+	j--;
+
+	for (i = 0; i <= size; i++, j--) {
+		toCopyIn[i] = toBeCopied[j];
+	}
+    
+}
+
+/**
+ * @brief A function to copy two strings.
+ * 
+ * @param toBeCopied 
+ * @param toCopyIn 
+ */
+void copy(string toBeCopied, string toCopyIn) {
+    int size;
+    size = len(toBeCopied);
+    for (int i = 0; i <= size; i++)
+    {
+        toCopyIn[i] = toBeCopied[i];
+    }
+
+}
+
+/**
+ * @brief A function to copy two strings.
+ * 
+ * @param toBeCopied 
+ * @param toCopyIn 
+ */
+void copyBack(string toBeCopied, string toCopyIn) {
+    int size;
+    size = len(toBeCopied);
+    int i, j;
+    for (j = 0; j <= size; j++);
+	j--;
+
+	for (i = 0; i <= size; i++, j--) {
+		toCopyIn[i] = toBeCopied[j];
+	}
+    
+}
+
+/**
+ * @brief A function to copy two strings.
+ * 
+ * @param toBeCopied 
+ * @param toCopyIn 
+ * @param size The size of the array
+ */
+void copy(int toBeCopied[], int toCopyIn[], int size) {
+
+    for (int i = 0; i <= size; i++)
+    {
+        toCopyIn[i] = toBeCopied[i];
+    }
+
+}
+
+/**
+ * @brief A function to copy two strings.
+ * 
+ * @param toBeCopied 
+ * @param toCopyIn 
+ * @param size The size of the array
+ */
+void copy(float toBeCopied[], float toCopyIn[], int size) {
+
+    for (int i = 0; i <= size; i++)
+    {
+        toCopyIn[i] = toBeCopied[i];
+    }
+
+}
+
+/**
+ * @brief A function to copy two strings.
+ * 
+ * @param toBeCopied 
+ * @param toCopyIn 
+ * @param size The size of the array
+ */
+void copy(double toBeCopied[], double toCopyIn[], int size) {
+
+    for (int i = 0; i <= size; i++)
+    {
+        toCopyIn[i] = toBeCopied[i];
+    }
+
+}
+
+/**
+ * @brief A function to reverse an array of characters.
+ * 
+ * @param toReverse 
+ */
 void reverse(char toReverse[]) {
     
+    int temp;
+    int size = len(toReverse);
+
+    for(int i = 0; i < size / 2; i++){
+        temp = toReverse[i];
+        toReverse[i] = toReverse[size-i-1];
+        toReverse[size-i-1] = temp;
+    }
     
+}
+
+/**
+ * @brief A function to reverse an array of characters.
+ * 
+ * @param toReverse
+ * @param size The size of the array of numbers.
+ */
+void reverse(int toReverse[], int size) {
+    
+    int temp;
+
+    for(int i = 0; i < size / 2; i++){
+        temp = toReverse[i];
+        toReverse[i] = toReverse[size-i-1];
+        toReverse[size-i-1] = temp;
+    }
+
+}
+
+/**
+ * @brief A function to reverse an array of characters.
+ * 
+ * @param toReverse
+ * @param size The size of the array of numbers.
+ */
+void reverse(float toReverse[], int size) {
+    
+    int temp;
+
+    for(int i = 0; i < size / 2; i++){
+        temp = toReverse[i];
+        toReverse[i] = toReverse[size-i-1];
+        toReverse[size-i-1] = temp;
+    }
+    
+}
+
+/**
+ * @brief A function to reverse an array of characters.
+ * 
+ * @param toReverse
+ * @param size The size of the array of numbers.
+ */
+void reverse(double toReverse[], int size) {
+    
+    int temp;
+
+    for(int i = 0; i < size / 2; i++){
+        temp = toReverse[i];
+        toReverse[i] = toReverse[size-i-1];
+        toReverse[size-i-1] = temp;
+    }
+    
+}
+
+/**
+ * @brief A function to print the id a variable.
+ * 
+ * @param idOfData 
+ */
+template <typename T>
+void id(T idOfData) {
+    cout << &idOfData << endl;
+}
+
+
+/**
+ * @brief A function to print the array's objects and their number in the array starting from zero
+ * 
+ * @param charArrayToEnumerate 
+ */
+void enumerate(char charArrayToEnumerate[]) {
+    int i, j = 0;
+
+    int size = len(charArrayToEnumerate);
+    for(i = 0; i < size; i++, j++) {
+        cout << j << ' ' << charArrayToEnumerate[i] << endl;
+    }
+}
+
+
+/**
+ * @brief A function to print the array's objects and their number in the array starting from any specific int.
+ * 
+ * @param charArrayToEnumerate 
+ * @param start
+ */
+void enumerate(char charArrayToEnumerate[], int start) {
+    int i, j = start;
+
+    int size = len(charArrayToEnumerate);
+    for(i = 0; i < size; i++, j++) {
+        cout << j << ' ' << charArrayToEnumerate[i] << endl;
+    }
+}
+
+
+/**
+ * @brief A function to print the array's objects and their number in the array starting from zero
+ * 
+ * @param charArrayToEnumerate 
+ */
+void enumerate(const char *charArrayToEnumerate[]) {
+    int i, j = 0;
+
+    int size = len(charArrayToEnumerate);
+    for(i = 0; i < size; i++, j++) {
+        cout << j << ' ' << charArrayToEnumerate[i] << endl;
+    }
+}
+
+
+/**
+ * @brief A function to print the array's objects and their number in the array starting from any specific int.
+ * 
+ * @param charArrayToEnumerate 
+ * @param start
+ */
+void enumerate(const char *charArrayToEnumerate[], int start) {
+    int i, j = start;
+
+    int size = len(charArrayToEnumerate);
+    for(i = 0; i < size; i++, j++) {
+        cout << j << ' ' << charArrayToEnumerate[i] << endl;
+    }
+}
+
+
+/**
+ * @brief A function to print the array's objects and their number in the array starting from zero
+ * 
+ * @param charArrayToEnumerate
+ * @param size The size of the array.
+ * 
+ */
+template <typename T>
+void enumerate(T arrayToEnumerate[], int size) {
+    int i, j = 0;
+
+    for(i = 0; i < size; i++, j++) {
+        cout << j << ' ' << arrayToEnumerate[i] << endl;
+    }
+
+}
+
+
+/**
+ * @brief A function to print the array's objects and their number in the array starting from a specific int.
+ * 
+ * @param arrayToEnumerate 
+ * @param size The size of the array.
+ * @param start
+ */
+template <typename T>
+void enumerate(T arrayToEnumerate[], int size, int start) {
+    int i, j = start;
+
+    for(i = 0; i < size; i++, j++) {
+        cout << j << ' ' << arrayToEnumerate[i] << endl;
+    }
+
 }
