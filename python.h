@@ -457,7 +457,7 @@ void print(T const(& arr)[n])
     }
 
     else {   
-        for (size_t i = 0; i < n; i++) {
+        for (size_t i = 0; i <= n; i++) {
             cout << arr[i] << ' ';
         }
     }
@@ -542,9 +542,8 @@ int len(const char *lenOfArrayOfStrings[]) {
     {
         countOfStringsInArray++;
     }
-    countOfStringsInArray - 13;
+    countOfStringsInArray = countOfStringsInArray - 13;
     return countOfStringsInArray;
-    
 }
 
 
