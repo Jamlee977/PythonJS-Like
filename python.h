@@ -14,7 +14,6 @@ using std::cin;
 using std::string;
 using std::stringstream;
 
-
 class range {
 private:
     int firstNumber, lastNumber;
@@ -183,6 +182,7 @@ public:
     }
 
 };
+
 
 
 /**
@@ -466,6 +466,29 @@ void print(T const(& arr)[n])
 }
 
 /**
+ * @brief A function to printa dynamic array.
+ * 
+ * @param arrOfData 
+ * @param size the size of the dynamic array 
+ *  
+ */
+template <typename T>
+void *print(T *arrOfData, int size) {
+    string STR;
+    str(arrOfData, STR);
+    if (arrOfData[0] == STR[0]) {
+        for(int i = 0; i < size; i++) {
+            cout << arrOfData[i];
+        }
+    }
+    else {
+        for(int i = 0; i < size; i++) {
+            cout << arrOfData[i] << ' ';
+        }
+    }
+}
+
+/**
  * @brief A function to print an array of strings.
  * 
  * @param arrayOfStrings 
@@ -485,10 +508,9 @@ void print(const char *arrayOfStrings[], int size) {
  * @param varInput is the input that the user wants to enter.
  */
 template<typename Y>
-void input(Y &varInput) {
+void input(Y varInput) {
 	cin >> varInput;
 }
-
 /**
  * @brief This function is to let the user input a variable with a string.
  * @param str is the sentence that you want to be before entering the variable.
@@ -500,6 +522,50 @@ void input(string str, Y &varInput) {
     cout << str;
 	cin >> varInput;
 }
+
+/**
+ * @brief A function to input the elements of a dynamic array.
+ * 
+ * @param newArray 
+ * @param size The size of the dynamic array
+ * 
+ */
+void *input(int *newArray, int size) {
+	for (int i = 0; i < size; i++)
+	{
+		cin >> *(newArray + i);
+	}
+}
+
+/**
+ * @brief A function to input the elements of a dynamic array.
+ * 
+ * @param newArray 
+ * @param size The size of the dynamic array
+ * 
+ */
+void *input(float *newArray, int size) {
+	for (int i = 0; i < size; i++)
+	{
+		cin >> *(newArray + i);
+	}
+}
+
+/**
+ * @brief A function to input the elements of a dynamic array.
+ * 
+ * @param newArray 
+ * @param size The size of the dynamic array
+ * 
+ */
+void *input(double *newArray, int size) {
+	for (int i = 0; i < size; i++)
+	{
+		cin >> *(newArray + i);
+	}
+}
+
+
 /**
  * @brief This function is used to get the length of an Array of Characters.
  * 
@@ -784,10 +850,10 @@ void enumerate(char charArrayToEnumerate[], int start) {
  * 
  * @param charArrayToEnumerate 
  */
-void enumerate(const char *charArrayToEnumerate[]) {
+void enumerate(const char *charArrayToEnumerate[], int size) {
     int i, j = 0;
 
-    int size = len(charArrayToEnumerate);
+    // int size = len(charArrayToEnumerate);
     for(i = 0; i < size; i++, j++) {
         cout << j << ' ' << charArrayToEnumerate[i] << endl;
     }
@@ -800,10 +866,10 @@ void enumerate(const char *charArrayToEnumerate[]) {
  * @param charArrayToEnumerate 
  * @param start
  */
-void enumerate(const char *charArrayToEnumerate[], int start) {
+void enumerate(const char *charArrayToEnumerate[], int size, int start) {
     int i, j = start;
 
-    int size = len(charArrayToEnumerate);
+    // int size = len(charArrayToEnumerate);
     for(i = 0; i < size; i++, j++) {
         cout << j << ' ' << charArrayToEnumerate[i] << endl;
     }
@@ -844,3 +910,4 @@ void enumerate(T arrayToEnumerate[], int size, int start) {
     }
 
 }
+
