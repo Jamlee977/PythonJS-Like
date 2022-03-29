@@ -7,6 +7,10 @@
 #include <string>
 #include <cstring>
 #include <sstream>
+#include <stack>
+
+#define INT_MIN -2147483647
+#define INT_MAX 2147483647
 
 using std::endl;
 using std::cout;
@@ -33,7 +37,6 @@ public:
         for (int j = 0, i = firstNumber; i < lastNumber; i++ , j++) {
             arrayOfInt[j] = i;
         }
-        
     }
 
     /**
@@ -316,7 +319,7 @@ void prime(int number) {
  */
 void prime(int firstNumber, int lastNumber) {
     int i, j, flag;
-
+    
     for (i = firstNumber; i <= lastNumber; i++) {
         if (i == 0 || i == 1) {
             continue;
@@ -550,6 +553,47 @@ void *input(float *newArray, int size) {
 		cin >> *(newArray + i);
 	}
 }
+
+/**
+ * @brief A function to get the minimum value of an array of integers
+ * 
+ * @param arrayOfInt 
+ * @param sizeOfArray 
+ * @return int 
+ */
+int min (int arrayOfInt[], int sizeOfArray) {
+    int i;
+    int minimumValue = INT_MAX;
+
+    for (i = 0; i < sizeOfArray; i++) {
+        if (minimumValue > arrayOfInt[i]) {
+            minimumValue = arrayOfInt[i];
+        }
+    }
+
+    return minimumValue;
+}
+
+/**
+ * @brief A function to get the maximum value of an array of integers
+ * 
+ * @param arrayOfInt 
+ * @param sizeOfArray 
+ * @return int 
+ */
+int max (int arrayOfInt[], int sizeOfArray) {
+    int i;
+    int maximumValue = INT_MIN;
+
+    for (i = 0; i < sizeOfArray; i++) {
+        if (arrayOfInt[i] > maximumValue) {
+            maximumValue = arrayOfInt[i];
+        }
+    }
+
+    return maximumValue;
+}
+
 
 /**
  * @brief A function to input the elements of a dynamic array.
@@ -909,5 +953,72 @@ void enumerate(T arrayToEnumerate[], int size, int start) {
         cout << j << ' ' << arrayToEnumerate[i] << endl;
     }
 
+}
+
+
+void sort(int arrayOfIntegers[], int sizeOfArray) {
+    int i, temp, j = 0;
+
+    while (j != sizeOfArray)
+    {
+
+        for (i = 0; i < sizeOfArray; i++) {
+
+            if (arrayOfIntegers[i] > arrayOfIntegers[i + 1])
+            {
+                temp = arrayOfIntegers[i];
+                arrayOfIntegers[i] = arrayOfIntegers[i + 1];
+                arrayOfIntegers[i + 1] = temp;
+            }
+
+        }
+
+        j++;
+    }
+    
+}
+
+void sort(float arrayOfIntegers[], int sizeOfArray) {
+    int i, temp, j = 0;
+
+    while (j != sizeOfArray)
+    {
+        
+        for (i = 0; i < sizeOfArray; i++) {
+
+            if (arrayOfIntegers[i] > arrayOfIntegers[i + 1])
+            {
+                temp = arrayOfIntegers[i];
+                arrayOfIntegers[i] = arrayOfIntegers[i + 1];
+                arrayOfIntegers[i + 1] = temp;
+            }
+
+        }
+
+        j++;
+    }
+    
+}
+
+void sort(double arrayOfIntegers[], int sizeOfArray) {
+    int i, temp, j = 0;
+
+    while (j != sizeOfArray)
+    {
+        
+        for (i = 0; i < sizeOfArray; i++) {
+
+            if (arrayOfIntegers[i] > arrayOfIntegers[i + 1])
+            {
+                temp = arrayOfIntegers[i];
+                arrayOfIntegers[i] = arrayOfIntegers[i + 1];
+                arrayOfIntegers[i + 1] = temp;
+            }
+
+        }
+
+        j++;
+    }
+    
 }
 
