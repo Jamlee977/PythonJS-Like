@@ -955,7 +955,12 @@ void enumerate(T arrayToEnumerate[], int size, int start) {
 
 }
 
-
+/**
+ * @brief A function to sort an array.
+ * 
+ * @param arrayOfIntegers An array of integers.
+ * @param sizeOfArray The array's size.
+ */
 void sort(int arrayOfIntegers[], int sizeOfArray) {
     int i, temp, j = 0;
 
@@ -978,7 +983,13 @@ void sort(int arrayOfIntegers[], int sizeOfArray) {
     
 }
 
-void sort(float arrayOfIntegers[], int sizeOfArray) {
+/**
+ * @brief A function to sort an array.
+ * 
+ * @param arrayOfIntegers An array of floats.
+ * @param sizeOfArray The array's size.
+ */
+void sort(float arrayOfFloats[], int sizeOfArray) {
     int i, temp, j = 0;
 
     while (j != sizeOfArray)
@@ -986,11 +997,11 @@ void sort(float arrayOfIntegers[], int sizeOfArray) {
         
         for (i = 0; i < sizeOfArray; i++) {
 
-            if (arrayOfIntegers[i] > arrayOfIntegers[i + 1])
+            if (arrayOfFloats[i] > arrayOfFloats[i + 1])
             {
-                temp = arrayOfIntegers[i];
-                arrayOfIntegers[i] = arrayOfIntegers[i + 1];
-                arrayOfIntegers[i + 1] = temp;
+                temp = arrayOfFloats[i];
+                arrayOfFloats[i] = arrayOfFloats[i + 1];
+                arrayOfFloats[i + 1] = temp;
             }
 
         }
@@ -1000,7 +1011,13 @@ void sort(float arrayOfIntegers[], int sizeOfArray) {
     
 }
 
-void sort(double arrayOfIntegers[], int sizeOfArray) {
+/**
+ * @brief A function to sort an array.
+ * 
+ * @param arrayOfIntegers An array of doubles.
+ * @param sizeOfArray The array's size.
+ */
+void sort(double arrayOfDoubles[], int sizeOfArray) {
     int i, temp, j = 0;
 
     while (j != sizeOfArray)
@@ -1008,11 +1025,11 @@ void sort(double arrayOfIntegers[], int sizeOfArray) {
         
         for (i = 0; i < sizeOfArray; i++) {
 
-            if (arrayOfIntegers[i] > arrayOfIntegers[i + 1])
+            if (arrayOfDoubles[i] > arrayOfDoubles[i + 1])
             {
-                temp = arrayOfIntegers[i];
-                arrayOfIntegers[i] = arrayOfIntegers[i + 1];
-                arrayOfIntegers[i + 1] = temp;
+                temp = arrayOfDoubles[i];
+                arrayOfDoubles[i] = arrayOfDoubles[i + 1];
+                arrayOfDoubles[i + 1] = temp;
             }
 
         }
