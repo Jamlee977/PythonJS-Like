@@ -342,7 +342,7 @@ void prime(int firstNumber, int lastNumber) {
 /**
  * @brief A function to uppercase a char or a string.
  * 
- * @param toUpper 
+ * @param toUpper A character to be turned into capital letters
  */
 char upper(char &toUpper) {
     toUpper = toUpper - 32;
@@ -352,7 +352,7 @@ char upper(char &toUpper) {
 /**
  * @brief A function to uppercase a char or a string.
  * 
- * @param toUpper 
+ * @param toUpper An array of characters to turn its characters into capital letters
  */
 void upper(char toUpper[]) {
     int i;
@@ -367,7 +367,7 @@ void upper(char toUpper[]) {
 /**
  * @brief A function to uppercase a char or a string.
  * 
- * @param toUpper 
+ * @param toUpper A string to be turned into capital letters
  */
 void upper(string &toUpper) {
     int i;
@@ -382,7 +382,7 @@ void upper(string &toUpper) {
 /**
  * @brief A function to lowercase a char or a string.
  * 
- * @param toLower 
+ * @param toLower A character to be turned into small letters
  */
 char lower(char &toLower) {
     toLower = toLower + 32;
@@ -392,7 +392,7 @@ char lower(char &toLower) {
 /**
  * @brief A function to lowercase a char or a string.
  * 
- * @param toLower 
+ * @param toLower An array of characters to turn its characters into small letters
  */
 void lower(char toLower[]) {
     int i;
@@ -407,7 +407,7 @@ void lower(char toLower[]) {
 /**
  * @brief A function to lowercase a char or a string.
  * 
- * @param toLower 
+ * @param toLower A string to be turned into capital letters
  */
 void lower(string &toLower) {
     int i;
@@ -423,7 +423,6 @@ void lower(string &toLower) {
 
 /**
  * @brief Python-Like print() function.
- * @param void prints a New Line
  */
 void print() {
     cout << endl;
@@ -468,7 +467,7 @@ void print(T const(& arr)[n])
 /**
  * @brief A function to printa dynamic array.
  * 
- * @param arrOfData 
+ * @param arrOfData An array of any datatype
  * @param size the size of the dynamic array 
  *  
  */
@@ -491,8 +490,8 @@ void *print(T *arrOfData, int size) {
 /**
  * @brief A function to print an array of strings.
  * 
- * @param arrayOfStrings 
- * @param size 
+ * @param arrayOfStrings An array of a character array
+ * @param size The size of the array
  */
 void print(const char *arrayOfStrings[], int size) {
     int i;
@@ -526,7 +525,7 @@ void input(string str, Y &varInput) {
 /**
  * @brief A function to input the elements of a dynamic array.
  * 
- * @param newArray 
+ * @param newArray A dynamic array of integers
  * @param size The size of the dynamic array
  * 
  */
@@ -540,7 +539,7 @@ void *input(int *newArray, int size) {
 /**
  * @brief A function to input the elements of a dynamic array.
  * 
- * @param newArray 
+ * @param newArray A dynamic array of floats
  * @param size The size of the dynamic array
  * 
  */
@@ -552,10 +551,26 @@ void *input(float *newArray, int size) {
 }
 
 /**
+ * @brief A function to input the elements of a dynamic array.
+ * 
+ * @param newArray A dynamic array of doubles
+ * @param size The size of the dynamic array
+ * 
+ */
+void *input(double *newArray, int size) {
+	for (int i = 0; i < size; i++)
+	{
+		cin >> *(newArray + i);
+	}
+}
+
+
+
+/**
  * @brief A function to get the minimum value of an array of integers
  * 
- * @param arrayOfInt 
- * @param sizeOfArray 
+ * @param arrayOfInt An array of integers
+ * @param sizeOfArray The size of the array 
  * @return int 
  */
 int min (int arrayOfInt[], int sizeOfArray) {
@@ -572,10 +587,52 @@ int min (int arrayOfInt[], int sizeOfArray) {
 }
 
 /**
+ * @brief A function to get the minimum value of an array of floats
+ * 
+ * @param arrayOfFloat An array of floats
+ * @param sizeOfArray The size of the array
+ * @return int 
+ */
+int min (float arrayOfFloats[], int sizeOfArray) {
+    int i;
+    int minimumValue = INT_MAX;
+
+    for (i = 0; i < sizeOfArray; i++) {
+        if (minimumValue > arrayOfFloats[i]) {
+            minimumValue = arrayOfFloats[i];
+        }
+    }
+
+    return minimumValue;
+}
+
+/**
+ * @brief A function to get the minimum value of an array of doubles
+ * 
+ * @param arrayOfDouble An array of doubles
+ * @param sizeOfArray The size of the array
+ * @return int 
+ */
+int min (double arrayOfDouble[], int sizeOfArray) {
+    int i;
+    int minimumValue = INT_MAX;
+
+    for (i = 0; i < sizeOfArray; i++) {
+        if (minimumValue > arrayOfDouble[i]) {
+            minimumValue = arrayOfDouble[i];
+        }
+    }
+
+    return minimumValue;
+}
+
+
+
+/**
  * @brief A function to get the maximum value of an array of integers
  * 
- * @param arrayOfInt 
- * @param sizeOfArray 
+ * @param arrayOfInt An array of integers
+ * @param sizeOfArray The size of the array
  * @return int 
  */
 int max (int arrayOfInt[], int sizeOfArray) {
@@ -591,20 +648,47 @@ int max (int arrayOfInt[], int sizeOfArray) {
     return maximumValue;
 }
 
+/**
+ * @brief A function to get the maximum value of an array of floats
+ * 
+ * @param arrayOfFloats An array of floats
+ * @param sizeOfArray The size of the array
+ * @return int 
+ */
+int max (float arrayOfFloats[], int sizeOfArray) {
+    int i;
+    int maximumValue = INT_MIN;
+
+    for (i = 0; i < sizeOfArray; i++) {
+        if (arrayOfFloats[i] > maximumValue) {
+            maximumValue = arrayOfFloats[i];
+        }
+    }
+
+    return maximumValue;
+}
+
 
 /**
- * @brief A function to input the elements of a dynamic array.
+ * @brief A function to get the maximum value of an array of doubles
  * 
- * @param newArray 
- * @param size The size of the dynamic array
- * 
+ * @param arrayOfDoubles An array of doubles
+ * @param sizeOfArray The size of the array
+ * @return int 
  */
-void *input(double *newArray, int size) {
-	for (int i = 0; i < size; i++)
-	{
-		cin >> *(newArray + i);
-	}
+int max (double arrayOfDoubles[], int sizeOfArray) {
+    int i;
+    int maximumValue = INT_MIN;
+
+    for (i = 0; i < sizeOfArray; i++) {
+        if (arrayOfDoubles[i] > maximumValue) {
+            maximumValue = arrayOfDoubles[i];
+        }
+    }
+
+    return maximumValue;
 }
+
 
 
 /**
@@ -657,8 +741,8 @@ int len(const char *lenOfArrayOfStrings[]) {
 /**
  * @brief A function to copy two strings.
  * 
- * @param toBeCopied 
- * @param toCopyIn 
+ * @param toBeCopied The array to be copied from
+ * @param toCopyIn The array to be copied in
  */
 void copy(char toBeCopied[], char toCopyIn[]) {
     int size;
@@ -671,10 +755,10 @@ void copy(char toBeCopied[], char toCopyIn[]) {
 }
 
 /**
- * @brief A function to copy two strings.
+ * @brief A function to copy two strings backwards.
  * 
- * @param toBeCopied 
- * @param toCopyIn 
+ * @param toBeCopied The array to be copied from
+ * @param toCopyIn The array to be copied in
  */
 void copyBack(char toBeCopied[], char toCopyIn[]) {
     int size;
@@ -692,8 +776,8 @@ void copyBack(char toBeCopied[], char toCopyIn[]) {
 /**
  * @brief A function to copy two strings.
  * 
- * @param toBeCopied 
- * @param toCopyIn 
+ * @param toBeCopied The array to be copied from
+ * @param toCopyIn The array to be copied in
  */
 void copy(string toBeCopied, string toCopyIn) {
     int size;
@@ -706,10 +790,10 @@ void copy(string toBeCopied, string toCopyIn) {
 }
 
 /**
- * @brief A function to copy two strings.
+ * @brief A function to copy two strings backwards.
  * 
- * @param toBeCopied 
- * @param toCopyIn 
+ * @param toBeCopied The array to be copied from
+ * @param toCopyIn The array to be copied in
  */
 void copyBack(string toBeCopied, string toCopyIn) {
     int size;
@@ -727,8 +811,8 @@ void copyBack(string toBeCopied, string toCopyIn) {
 /**
  * @brief A function to copy two strings.
  * 
- * @param toBeCopied 
- * @param toCopyIn 
+ * @param toBeCopied The array to be copied from
+ * @param toCopyIn The array to be copied in
  * @param size The size of the array
  */
 void copy(int toBeCopied[], int toCopyIn[], int size) {
@@ -741,10 +825,10 @@ void copy(int toBeCopied[], int toCopyIn[], int size) {
 }
 
 /**
- * @brief A function to copy two strings.
+ * @brief A function to copy two strings backwards.
  * 
- * @param toBeCopied 
- * @param toCopyIn 
+ * @param toBeCopied The array to be copied from
+ * @param toCopyIn The array to be copied in
  * @param size The size of the array
  */
 void copy(float toBeCopied[], float toCopyIn[], int size) {
@@ -759,8 +843,8 @@ void copy(float toBeCopied[], float toCopyIn[], int size) {
 /**
  * @brief A function to copy two strings.
  * 
- * @param toBeCopied 
- * @param toCopyIn 
+ * @param toBeCopied The array to be copied from
+ * @param toCopyIn The array to be copied in
  * @param size The size of the array
  */
 void copy(double toBeCopied[], double toCopyIn[], int size) {
@@ -775,7 +859,7 @@ void copy(double toBeCopied[], double toCopyIn[], int size) {
 /**
  * @brief A function to reverse an array of characters.
  * 
- * @param toReverse 
+ * @param toReverse An array to reverse
  */
 void reverse(char toReverse[]) {
     
@@ -793,7 +877,7 @@ void reverse(char toReverse[]) {
 /**
  * @brief A function to reverse an array of characters.
  * 
- * @param toReverse
+ * @param toReverse An array to reverse
  * @param size The size of the array of numbers.
  */
 void reverse(int toReverse[], int size) {
@@ -811,7 +895,7 @@ void reverse(int toReverse[], int size) {
 /**
  * @brief A function to reverse an array of characters.
  * 
- * @param toReverse
+ * @param toReverse An array to reverse
  * @param size The size of the array of numbers.
  */
 void reverse(float toReverse[], int size) {
@@ -829,7 +913,7 @@ void reverse(float toReverse[], int size) {
 /**
  * @brief A function to reverse an array of characters.
  * 
- * @param toReverse
+ * @param toReverse An array to reverse
  * @param size The size of the array of numbers.
  */
 void reverse(double toReverse[], int size) {
@@ -847,7 +931,7 @@ void reverse(double toReverse[], int size) {
 /**
  * @brief A function to print the id a variable.
  * 
- * @param idOfData 
+ * @param idOfData The name of any variable
  */
 template <typename T>
 void id(T idOfData) {
@@ -858,7 +942,7 @@ void id(T idOfData) {
 /**
  * @brief A function to print the array's objects and their number in the array starting from zero
  * 
- * @param charArrayToEnumerate 
+ * @param charArrayToEnumerate Array of characters that needs to be enumerated
  */
 void enumerate(char charArrayToEnumerate[]) {
     int i, j = 0;
@@ -873,8 +957,8 @@ void enumerate(char charArrayToEnumerate[]) {
 /**
  * @brief A function to print the array's objects and their number in the array starting from any specific int.
  * 
- * @param charArrayToEnumerate 
- * @param start
+ * @param charArrayToEnumerate Array of characters that needs to be enumerated
+ * @param start The starting point
  */
 void enumerate(char charArrayToEnumerate[], int start) {
     int i, j = start;
@@ -889,7 +973,7 @@ void enumerate(char charArrayToEnumerate[], int start) {
 /**
  * @brief A function to print the array's objects and their number in the array starting from zero
  * 
- * @param charArrayToEnumerate 
+ * @param charArrayToEnumerate Array of an array of characters that needs to be enumerated
  */
 void enumerate(const char *charArrayToEnumerate[], int size) {
     int i, j = 0;
@@ -904,8 +988,8 @@ void enumerate(const char *charArrayToEnumerate[], int size) {
 /**
  * @brief A function to print the array's objects and their number in the array starting from any specific int.
  * 
- * @param charArrayToEnumerate 
- * @param start
+ * @param charArrayToEnumerate Array of an array of characters that needs to be enumerated
+ * @param start The starting point
  */
 void enumerate(const char *charArrayToEnumerate[], int size, int start) {
     int i, j = start;
@@ -920,7 +1004,7 @@ void enumerate(const char *charArrayToEnumerate[], int size, int start) {
 /**
  * @brief A function to print the array's objects and their number in the array starting from zero
  * 
- * @param charArrayToEnumerate
+ * @param arrayToEnumerate An array that needs to be enumerated whether it was an array of ints, floats, or doubles 
  * @param size The size of the array.
  * 
  */
@@ -938,9 +1022,9 @@ void enumerate(T arrayToEnumerate[], int size) {
 /**
  * @brief A function to print the array's objects and their number in the array starting from a specific int.
  * 
- * @param arrayToEnumerate 
+ * @param arrayToEnumerate An array that needs to be enumerated whether it was an array of ints, floats, or doubles
  * @param size The size of the array.
- * @param start
+ * @param start The starting point
  */
 template <typename T>
 void enumerate(T arrayToEnumerate[], int size, int start) {
