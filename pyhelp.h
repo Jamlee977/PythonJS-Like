@@ -21,30 +21,6 @@ class toChar;
 
 
 
-void type(string);
-
-void type(char);
-
-void type(int);
-
-void type(float);
-
-void type(double);
-
-void type(long double);
-
-void type(long int);
-
-void type(long long int);
-
-void type(unsigned int);
-
-template <typename T>
-void type(T []);
-
-
-
-
 bool isPrime(int);
 
 
