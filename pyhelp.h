@@ -1,68 +1,23 @@
 #pragma once
 
-#ifndef PYHELP_H_
-#define PYHELP_H_
+#ifndef PYHELP_H
+#define PYHELP_H
 
-#include "pyhelp.h"
+#include "pyhelp.cpp"
 #include <iostream>
-
-#endif
 
 using std::string;
 
 
-class range {
-public:
-    
-    range(int, int, int []);
+class range;
 
-    range(int, int, int, int []);
-          
-};
+class str;
 
+class integer;
 
-class str {
-public:
-    template <typename T>
-    str(T, string &);
-};
+class real;
 
-class integer {
-public:
-
-    integer(string, int &);
-    
-    
-    integer(string, long &);
-
-    
-    integer(string, long long int &);
-
-    
-    integer(string, unsigned int &);
-};
-
-class real {
-public:
-
-    
-    real(string, float &);
-
-    
-    real(string, double &);
-
-};
-
-class toChar {
-public:
-
-    
-    toChar(string, char &);
-
-    
-    toChar(string, char []);
-
-};
+class toChar;
 
 
 
@@ -213,4 +168,5 @@ void sort(int [], int);
 void sort(float [], int);
 
 void sort(double [], int);
+#endif
 
