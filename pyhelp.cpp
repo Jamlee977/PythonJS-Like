@@ -1,10 +1,7 @@
 #include <iostream>
-#include <math.h>
-#include <cmath>
 #include <string>
 #include <cstring>
 #include <sstream>
-#include <stack>
 
 #define INT_MIN -2147483647
 #define INT_MAX 2147483647
@@ -16,9 +13,10 @@ using std::string;
 using std::stringstream;
 
 class range {
-private:
-    int firstNumber, lastNumber;
 public:
+
+    range() = default;
+
     /**
      * @brief A range class that can be used to assign an array of integers.
      * 
@@ -57,8 +55,11 @@ public:
     }
 };
 
+
 class str {
 public:
+
+    str() = default;
     /**
      * @brief Convert a number to a string.
      * 
@@ -76,6 +77,7 @@ public:
 class integer {
 public:
 
+    integer() = default;
     /**
      * @brief Convert a string into an int.
      * 
@@ -128,6 +130,8 @@ public:
 class real {
 public:
 
+    real() = default;
+
     /**
      * @brief Convert a string into a float.
      * 
@@ -157,6 +161,7 @@ public:
 class toChar {
 public:
 
+    toChar() = default;
     /**
      * @brief Convert a string into a char.
      * 
@@ -182,80 +187,6 @@ public:
     }
 
 };
-
-
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(string stringDatatype) {
-    cout << "str" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(char charDatatype) {
-    cout << "char" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(int intDatatype) {
-    cout << "int" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(float floatDatatype) {
-    cout << "float" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(double doubleDatatype) {
-    cout << "double" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(long double longDoubleDatatype) {
-    cout << "long double" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(long int longIntDatatype) {
-    cout << "long int" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(long long int longLongIntDatatype) {
-    cout << "long long int" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-void type(unsigned int unsignedIntDatatype) {
-    cout << "unsigned int" << endl;
-}
-
-/**
- * @brief A function that prints the type of a variable
- */
-template <typename T>
-void type(T arrayDatatype[]) {
-    cout << "array" << endl;
-}
-
 
 
 
